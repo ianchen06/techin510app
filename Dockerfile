@@ -24,6 +24,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PATH="/opt/venv/bin: $PATH"
 
-EXPOSE 8000
+EXPOSE 8501
 WORKDIR /app
 COPY . /app/
+CMD ["python", "-m", "streamlit", "run", "app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
