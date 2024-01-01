@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_41612e8c15bc4f3684eb805e2a70946b }}/ianchen06/techin510app:${{ github.sha }}
+        tags: ghcr.io/${{ secrets.AzureAppService_ContainerUsername_41612e8c15bc4f3684eb805e2a70946b }}/techin510app:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'ychen349app'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_9aa12eaf7c444a00aa75dd11e8e9e018 }}
-        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_41612e8c15bc4f3684eb805e2a70946b }}/ianchen06/techin510app:${{ github.sha }}'
+        images: 'ghcr.io/${{ secrets.AzureAppService_ContainerUsername_41612e8c15bc4f3684eb805e2a70946b }}/techin510app:${{ github.sha }}'
